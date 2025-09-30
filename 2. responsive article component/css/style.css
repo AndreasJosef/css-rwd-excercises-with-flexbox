@@ -1,0 +1,81 @@
+@import './base.css';
+
+:root {
+    /* color tokens */
+    --color-bg-card: #36878a;
+    --color-bg-butotn: #4ec5c9;
+    --color-text: #fff;
+
+    /* fluid size for text */
+    --fs-card-heading: clamp(1.125rem, 2.5vw + .5rem, 1.5rem);
+    --fs-card-body: clamp(.95rem, .4vw + .85rem, 1rem);
+
+    /* spacing steps */
+    --space-1: .5rem;
+    --space-2: .75rem;
+    --space-3: 1rem;
+    --space-4: 1.25rem;
+    --space-6: 1.75rem;
+}
+
+.card {
+    background-color: var(--color-bg-card);
+    color: var(--color-text);
+    max-width: min(100% - 2rem, 42rem);
+    display: grid;
+    margin-inline: auto;
+}
+
+.card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-content {
+    font-size: var(--fs-card-body);
+    padding: var(--space-4);
+}
+
+.card-title {
+    font-size: var(--fs-card-heading);
+    margin-block: 1rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-start: var(--space-6);
+}
+
+.card-read-time {
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+    opacity: .6;
+}
+
+.card-btn {
+    background-color: #4ec5c9;
+    font-weight: 700;
+    padding: var(--space-2) var(--space-3);
+    transition: background ease 0.18s;
+}
+
+.card-btn:hover {
+    background: color-mix(in srgb, var(--color-bg-butotn) 80%, white);
+;
+}
+
+@media (min-width: 640px) {
+    .card {
+        grid-template-columns: 1fr 1.6fr;
+    }
+
+    .card-img {
+        height: 300px;
+    }
+
+} 
