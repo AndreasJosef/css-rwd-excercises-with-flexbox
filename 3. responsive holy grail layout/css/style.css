@@ -64,21 +64,21 @@ header {
 }
 
 section {
-    grid-area: "content";
+    grid-area: content;
     background-color: var(--color-bg-main);
     padding-inline: var(--space-1);
     padding-block-start: var(--space--1);
 }
 
 nav {
-    grid-area: "sidenav";
+    grid-area: sidenav;
     background-color: var(--color-bg-side-nav);
     padding-inline: var(--space-1);
     padding-block-start: var(--space--1);
 }
 
 aside {
-    grid-area: "aside";
+    grid-area: aside;
     background-color: var(--color-bg-sidebar);
     padding-inline: var(--space-1);
     padding-block-start: var(--space--1);
