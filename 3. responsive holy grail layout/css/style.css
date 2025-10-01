@@ -1,7 +1,7 @@
 :root {
     --color-blue: #27547d;
 
-    --color-bg-header: var(--color-blue) ;
+    --color-bg-header: var(--color-blue);
     --color-bg-main: #fdce5c;
     --color-bg-side-nav: #26c793;
     --color-bg-sidebar: #ef436b;
@@ -41,13 +41,17 @@ a {
     margin-inline: auto;
 }
 
-.container  * {
+.container * {
     border-radius: var(--border-radius);
 }
 
 main {
     display: grid;
     gap: var(--space--1);
+    grid-template-areas:
+        "content"
+        "sidenav"
+        "aside";
     grid-template-rows: 2fr 1fr 1fr;
 }
 
@@ -60,18 +64,21 @@ header {
 }
 
 section {
+    grid-area: "content";
     background-color: var(--color-bg-main);
     padding-inline: var(--space-1);
     padding-block-start: var(--space--1);
 }
 
 nav {
+    grid-area: "sidenav";
     background-color: var(--color-bg-side-nav);
     padding-inline: var(--space-1);
     padding-block-start: var(--space--1);
 }
 
 aside {
+    grid-area: "aside";
     background-color: var(--color-bg-sidebar);
     padding-inline: var(--space-1);
     padding-block-start: var(--space--1);
@@ -86,6 +93,7 @@ footer {
 @media (min-width: 768px) {
     main {
         grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: auto;
+        grid-template-areas: "sidenav content aside";
+        grid-template-rows: 1fr;
     }
 }
